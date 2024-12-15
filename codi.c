@@ -11,5 +11,5 @@ int main(int argc, char *argv[]){
         int fd = open (argv[1], O_CREAT | O_WRONLY | O_TRUNC, 0644);
         if (fd == -1){
                 perror("No s'ha pogut crear el fitxer");
-                }
+                return -1;
         }
