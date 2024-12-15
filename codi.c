@@ -13,3 +13,7 @@ int main(int argc, char *argv[]){
                 perror("No s'ha pogut crear el fitxer");
                 return -1;
         }
+char caracter;
+ssize_t bytesLlegits
+
+
