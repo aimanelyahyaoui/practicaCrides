@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
     char caracter;
     ssize_t bytesLlegits;
 
-    while ((bytesLlegits = read(STDIN_FILENO, &caracter, 1)) > 0) {
+    while ((bytesLlegits = read(STDIN_FILENO, &caracter, 1)) != 0 && -1) {
         if ((write(STDOUT_FILENO, &caracter, 1) == -1) || write(fitxer, &caracter, 1) == -1) {
             perror("Error durant l'escriptura");
             close(fitxer);
