@@ -13,7 +13,27 @@ int main(int argc, char *argv[]){
                 perror("No s'ha pogut crear el fitxer");
                 return -1;
         }
-char caracter;
-ssize_t bytesLlegits
 
+    char caracter;
+    ssize_t bytesLlegits;
 
+    while ((bytesLlegits = read(STDIN_FILENO, &caracter, 1)) > 0) {
+        if ((write(STDOUT_FILENO, &caracter, 1) == -1) || write(fitxer, &caracter, 1) == -1) {
+            perror("Error durant l'escriptura");
+            close(fitxer);
+            return -1;
+        }
+    }
+
+    if (bytesLlegits == -1) {
+        perror("Error durant la lectura");
+        close(fitxer);
+        return -1;
+    }
+
+    if (close(fitxer) == -1) {
+        perror("Error en tancar el fitxer");
+        return -1;
+    }
+
+    return 0;
