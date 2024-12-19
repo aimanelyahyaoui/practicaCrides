@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
     while ((bytesLlegits = read(STDIN_FILENO, &caracter, 1)) != 0) { // Llegeix caràcter per caràcter des de l'entrada estàndard fins que no hi hagi més dades.
         if (bytesLlegits == -1 || write(STDOUT_FILENO, &caracter, 1) == -1 || write(fd, &caracter, 1) == -1) { // Gestiona errors durant la lectura o escriptura.
             perror("Error durant l'escriptura"); // Mostra un missatge d'error si hi ha problemes en l'escriptura.
-            close(fd); // Tanca el fitxer abans de finalitzar per evitar pèrdua de recursos.
+            close(fd); // Tanca el fitxer.
             return -1; // Finalitza el programa amb un codi d'error.
         }
     }
