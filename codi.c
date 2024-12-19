@@ -41,8 +41,7 @@ int main(int argc, char *argv[]) {
 }
 
 
-#Segon programa:
-
+// Segon programa:
 
 #include <fcntl.h>
 #include <unistd.h>
